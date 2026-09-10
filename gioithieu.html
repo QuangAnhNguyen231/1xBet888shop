@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu | Student Shop</title>
+    <style>
+        /* CSS Khởi tạo và Biến màu (Dựa theo trang chủ của bạn) */
+        :root {
+            --primary-red: #d93025;     /* Màu đỏ logo */
+            --primary-blue: #1a73e8;    /* Màu xanh dương link & tiêu đề */
+            --light-blue: #e8f0fe;      /* Màu xanh nhạt background */
+            --text-dark: #202124;       /* Màu chữ chính */
+            --text-gray: #5f6368;       /* Màu chữ phụ */
+            --bg-white: #ffffff;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: Arial, Helvetica, sans-serif; color: var(--text-dark); line-height: 1.6; background-color: var(--bg-white); }
+        
+        /* ĐIỀU HƯỚNG (HEADER) - Giống hệt trang chủ */
+        header { 
+            background: var(--bg-white); 
+            padding: 15px 50px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 1px solid #f1f3f4;
+            position: sticky; top: 0; z-index: 100;
+        }
+        .logo { color: var(--primary-red); font-weight: bold; font-size: 22px; text-transform: uppercase; }
+        nav a { 
+            color: var(--primary-blue); 
+            text-decoration: none; 
+            margin-left: 25px; 
+            font-size: 14px; 
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        nav a:hover { text-decoration: underline; }
+        .active-link { font-weight: bold; border-bottom: 2px solid var(--primary-blue); padding-bottom: 4px; }
+
+        /* KHỐI HERO (BANNER GIỚI THIỆU) */
+        .hero { 
+            background-color: var(--light-blue); 
+            text-align: center; 
+            padding: 80px 20px; 
+        }
+        .hero h1 { 
+            color: var(--primary-blue); 
+            font-size: 38px; 
+            margin-bottom: 15px; 
+        }
+        .hero p { 
+            font-size: 16px; 
+            color: var(--text-gray); 
+            max-width: 600px; 
+            margin: 0 auto; 
+        }
+
+        /* NỘI DUNG CÂU CHUYỆN THƯƠNG HIỆU */
+        .story-section { 
+            display: flex; 
+            flex-wrap: wrap; 
+            max-width: 1000px; 
+            margin: 60px auto; 
+            padding: 0 20px; 
+            gap: 40px; 
+            align-items: center; 
+        }
+        .story-content { flex: 1; min-width: 300px; }
+        .story-content h2 { 
+            color: var(--primary-blue); 
+            font-size: 28px; 
+            margin-bottom: 20px; 
+        }
+        .story-content p { 
+            margin-bottom: 15px; 
+            text-align: justify; 
+            color: var(--text-gray); 
+        }
+        
+        /* Khối ảnh minh họa có nền xanh nhạt giống ảnh sản phẩm trang chủ */
+        .story-image-box { 
+            flex: 1; 
+            min-width: 300px; 
+            background-color: var(--light-blue); 
+            border-radius: 12px; 
+            min-height: 350px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center;
+            padding: 20px;
+            color: var(--primary-blue); 
+            font-weight: bold;
+            border: 1px solid #d2e3fc;
+        }
+
+        /* SẢN PHẨM CỐT LÕI */
+        .core-values { 
+            text-align: center; 
+            padding: 60px 20px; 
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .core-values h2 { 
+            color: var(--primary-blue); 
+            font-size: 28px; 
+            margin-bottom: 40px; 
+        }
+        
+        .value-grid { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 30px; 
+        }
+        .value-card { 
+            background: var(--bg-white); 
+            border: 1px solid #f1f3f4; 
+            border-radius: 12px; 
+            flex: 1; 
+            min-width: 250px; 
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .value-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 8px 16px rgba(26, 115, 232, 0.1); 
+        }
+        
+        /* Ô icon nền xanh giống thẻ Sản phẩm nổi bật ở trang chủ */
+        .icon-box {
+            background-color: var(--light-blue);
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px auto;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+
+        .value-card h3 { color: var(--text-dark); margin-bottom: 10px; font-size: 18px; }
+        .value-card p { font-size: 14px; color: var(--text-gray); line-height: 1.5; }
+
+        /* FOOTER */
+        footer { 
+            background: #f8f9fa; 
+            color: var(--text-gray); 
+            text-align: center; 
+            padding: 20px; 
+            margin-top: 40px; 
+            font-size: 13px; 
+            border-top: 1px solid #f1f3f4;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header đồng bộ màu sắc với trang chủ -->
+    <header>
+        <div class="logo">STUDENT SHOP</div>
+        <nav>
+            <a href="index.html">Trang chủ</a>
+            <a href="#">Sản phẩm</a>
+            <a href="#">Danh mục</a>
+            <a href="#">Khuyến mãi</a>
+            <a href="gioi-thieu.html" class="active-link">Giới thiệu</a>
+            <a href="#">Liên hệ</a>
+        </nav>
+    </header>
+
+    <!-- Banner chính có nền xanh nhạt giống trang chủ -->
+    <section class="hero">
+        <h1>CÂU CHUYỆN THƯƠNG HIỆU</h1>
+        <p>Mua sắm đơn giản - Giá tốt cho sinh viên. Chúng tôi mang đến thời trang chất lượng, tiết kiệm và đầy phong cách.</p>
+    </section>
+
+    <!-- Phần nội dung chính -->
+    <section class="story-section">
+        <div class="story-content">
+            <h2>Từ Giảng Đường Đến Phong Cách Cá Nhân</h2>
+            <p>Mọi thương hiệu đều bắt đầu từ một bài toán. Với <strong>Student Shop</strong>, ý tưởng được nhen nhóm ngay từ những ngày tháng sinh viên. Chúng tôi hiểu rằng các bạn trẻ luôn khao khát thể hiện cá tính qua thời trang, nhưng rào cản lớn nhất luôn là "ngân sách eo hẹp".</p>
+            <p>Bằng cách loại bỏ chi phí mặt bằng đắt đỏ và tối ưu hóa khâu nhập hàng trực tiếp, Student Shop cam kết mang đến những sản phẩm hợp xu hướng nhất với mức giá hoàn toàn thân thiện với túi tiền sinh viên.</p>
+            <p>Sứ mệnh của chúng tôi: <strong>Thời trang chất lượng không nhất thiết phải đắt đỏ!</strong></p>
+        </div>
+        <div class="story-image-box">
+            [Thay bằng ảnh kho hàng hoặc ảnh sinh viên năng động]
+        </div>
+    </section>
+
+    <!-- Khối thẻ giá trị cốt lõi thiết kế giống khối Sản phẩm trang chủ -->
+    <section class="core-values">
+        <h2>Sản Phẩm Cốt Lõi</h2>
+        <div class="value-grid">
+            <div class="value-card">
+                <div class="icon-box">🎒</div>
+                <h3>Balo Học Đường</h3>
+                <p>Thiết kế nhiều ngăn thông minh, chịu lực tốt, bảo vệ laptop an toàn để bạn yên tâm đến lớp mỗi ngày.</p>
+            </div>
+            <div class="value-card">
+                <div class="icon-box">🧥</div>
+                <h3>Áo Hoodie Năng Động</h3>
+                <p>Chất liệu nỉ cotton giữ ấm cực tốt, form rộng (boxy) chuẩn streetwear dễ dàng mix & match.</p>
+            </div>
+            <div class="value-card">
+                <div class="icon-box">🧢</div>
+                <h3>Mũ / Phụ Kiện</h3>
+                <p>Từ Snapback đến Fitted Cap, những điểm nhấn nhỏ nhưng làm nổi bật toàn bộ outfit của bạn.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Student Shop. All rights reserved. <br>
+        Website mua sắm dành riêng cho sinh viên.
+    </footer>
+
+</body>
+</html>
