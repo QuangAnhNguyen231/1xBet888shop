@@ -1,5 +1,28 @@
 
+.promotion{
+    background-color: #d9ecff;
+    padding: 60px 20px;
+    text-align: center;
+}
 
+.promotion h2{
+    color: #0066cc;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+.promotion{
+    background: linear-gradient(
+        to bottom,
+        #cfe8ff 0%,
+        #d9ecff 100%
+    );
+    padding: 60px 20px;
+    text-align: center;
+}
+.promotion-subtitle{
+    color: #444;
+    margin-bottom: 40px;
+}
 .promotion {
     padding: 50px 20px;
     background-color: #f4f8fc;
